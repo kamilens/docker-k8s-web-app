@@ -1,0 +1,11 @@
+web:
+  image: nginx
+  container_name: docker_k8s_web_app
+  hostname: nginx
+  volumes:
+      - ./dist/web-app/:/usr/share/nginx/html:ro
+  ports:
+   - "80:80"
+  environment:
+   - NGINX_HOST=localhost
+   - NGINX_PORT=80
